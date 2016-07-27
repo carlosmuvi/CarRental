@@ -4,15 +4,15 @@ package com.carlosmuvi.carrental.base;
  * Created by carlosmuvi on 28/07/16.
  */
 
-public abstract class BasePresenter<V extends BaseView> {
+public abstract class BasePresenter {
 
-    private V view;
+    private BaseView view;
 
-    public V getView() {
+    public BaseView getView() {
         return view;
     }
 
-    public void setView(V view) {
+    public void setView(BaseView view) {
         this.view = view;
     }
 }

@@ -10,7 +10,7 @@ import butterknife.ButterKnife;
  * Created by carlosmuvi on 28/07/16.
  */
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<P extends BasePresenter, V extends BaseView> extends AppCompatActivity {
 
     private P presenter;
 
@@ -23,9 +23,12 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     private void bindPresenter() {
         this.presenter = getPresenter();
+        this.presenter.setView(getView());
     }
 
     protected abstract P getPresenter();
+
+    protected abstract V getView();
 
     protected abstract @LayoutRes int getLayoutId();
 }
