@@ -19,4 +19,8 @@ public class CarType {
     public String getCode() {
         return carTypeCode;
     }
+
+    public String getSize() {
+        return size;
+    }
 }

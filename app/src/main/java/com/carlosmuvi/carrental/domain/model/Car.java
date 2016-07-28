@@ -16,4 +16,12 @@ public class Car {
     public String getModel() {
         return carType.getCode();
     }
+
+    public String getPrice() {
+        return price.toString();
+    }
+
+    public String getSize() {
+        return carType.getSize();
+    }
 }

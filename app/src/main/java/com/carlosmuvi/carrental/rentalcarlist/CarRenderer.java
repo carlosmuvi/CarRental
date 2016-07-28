@@ -18,9 +18,10 @@ public class CarRenderer extends Renderer<Car> {
 
     @Bind(R.id.listitem_car_title) TextView titleTextView;
     @Bind(R.id.listitem_car_selection) TextView subtitleTextView;
+    @Bind(R.id.listitem_car_price) TextView priceTextView;
 
     @Override protected void setUpView(View rootView) {
-        
+
     }
 
     @Override protected void hookListeners(View rootView) {
@@ -37,6 +38,11 @@ public class CarRenderer extends Renderer<Car> {
         Car car = getContent();
         bindCarTitle(car);
         bindCarSubtitle(car);
+        bindCarPrice(car);
+    }
+
+    private void bindCarPrice(Car car) {
+        priceTextView.setText(car.getPrice());
     }
 
     private void bindCarSubtitle(Car car) {
@@ -44,6 +50,6 @@ public class CarRenderer extends Renderer<Car> {
     }
 
     private void bindCarTitle(Car car) {
-        subtitleTextView.setText(car.getModel());
+        subtitleTextView.setText(car.getSize());
     }
 }
