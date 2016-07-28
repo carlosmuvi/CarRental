@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
 import com.carlosmuvi.carrental.base.BasePresenter;
 import com.carlosmuvi.carrental.base.BaseView;
 import com.carlosmuvi.carrental.base.application.AppComponent;
-import com.carlosmuvi.carrental.base.application.BaseComponent;
+import com.carlosmuvi.carrental.base.BaseComponent;
 import com.carlosmuvi.carrental.base.application.CarRentalApp;
 
 /**

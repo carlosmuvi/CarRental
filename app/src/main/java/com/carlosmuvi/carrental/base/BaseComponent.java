@@ -1,4 +1,4 @@
-package com.carlosmuvi.carrental.base.application;
+package com.carlosmuvi.carrental.base;
 
 /**
  * Created by carlosmuvi on 28/07/16.

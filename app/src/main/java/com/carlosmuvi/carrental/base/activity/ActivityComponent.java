@@ -2,7 +2,7 @@ package com.carlosmuvi.carrental.base.activity;
 
 import android.app.Activity;
 import com.carlosmuvi.carrental.base.application.AppComponent;
-import com.carlosmuvi.carrental.base.application.BaseComponent;
+import com.carlosmuvi.carrental.base.BaseComponent;
 import dagger.Component;
 
 /**
