@@ -30,11 +30,22 @@ public class HotWireModelMapper {
             String carTypeCode = result.carTypeCode;
             Price price = mapPrice(result);
             CarType carType = mapCarType(result, carMetadata);
-
-            cars.add(new Car(price, carType));
+            String rentalPeriod = mapRentalPeriod(result);
+            cars.add(new Car(price, carType, rentalPeriod));
         }
 
         return cars;
+    }
+
+    private String mapRentalPeriod(Result result) {
+        return "from "
+            + result.pickupDay
+            + " "
+            + result.pickupTime
+            + " to "
+            + result.dropoffDay
+            + " "
+            + result.dropoffTime;
     }
 
     private CarType mapCarType(Result result, MetaData carMetadata) {

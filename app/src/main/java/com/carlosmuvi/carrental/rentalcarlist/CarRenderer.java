@@ -19,6 +19,7 @@ public class CarRenderer extends Renderer<Car> {
     @Bind(R.id.listitem_car_title) TextView titleTextView;
     @Bind(R.id.listitem_car_selection) TextView subtitleTextView;
     @Bind(R.id.listitem_car_price) TextView priceTextView;
+    @Bind(R.id.listitem_car_period) TextView periodTextView;
 
     @Override protected void setUpView(View rootView) {
 
@@ -39,6 +40,11 @@ public class CarRenderer extends Renderer<Car> {
         bindCarTitle(car);
         bindCarSubtitle(car);
         bindCarPrice(car);
+        bindCarRentalPeriod(car);
+    }
+
+    private void bindCarRentalPeriod(Car car) {
+        periodTextView.setText(car.getRentalPeriod());
     }
 
     private void bindCarPrice(Car car) {

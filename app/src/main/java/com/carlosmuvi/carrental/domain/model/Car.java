@@ -7,10 +7,12 @@ package com.carlosmuvi.carrental.domain.model;
 public class Car {
     private Price price;
     private CarType carType;
+    private String rentalPeriod;
 
-    public Car(Price price, CarType carType) {
+    public Car(Price price, CarType carType, String rentalPeriod) {
         this.price = price;
         this.carType = carType;
+        this.rentalPeriod = rentalPeriod;
     }
 
     public String getModel() {
@@ -23,5 +25,9 @@ public class Car {
 
     public String getSize() {
         return carType.getSize();
+    }
+
+    public String getRentalPeriod() {
+        return rentalPeriod;
     }
 }
