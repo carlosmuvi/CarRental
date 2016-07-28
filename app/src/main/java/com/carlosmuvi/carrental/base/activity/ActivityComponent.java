@@ -1,6 +1,8 @@
 package com.carlosmuvi.carrental.base.activity;
 
+import android.app.Activity;
 import com.carlosmuvi.carrental.base.application.AppComponent;
+import com.carlosmuvi.carrental.base.application.BaseComponent;
 import dagger.Component;
 
 /**
@@ -8,7 +10,7 @@ import dagger.Component;
  */
 
 @ActivityScope @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
-public interface ActivityComponent {
-    BaseActivity activity();
+public interface ActivityComponent extends BaseComponent{
+    Activity activity();
 
 }

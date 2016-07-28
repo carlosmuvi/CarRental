@@ -1,5 +1,6 @@
 package com.carlosmuvi.carrental.base.activity;
 
+import android.app.Activity;
 import dagger.Module;
 import dagger.Provides;
 
@@ -8,13 +9,13 @@ import dagger.Provides;
  */
 
 @Module public class ActivityModule {
-    private final BaseActivity activity;
+    private final Activity activity;
 
-    public ActivityModule(BaseActivity activity) {
+    public ActivityModule(Activity activity) {
         this.activity = activity;
     }
 
-    @Provides @ActivityScope BaseActivity providesActivity() {
+    @Provides @ActivityScope Activity providesActivity() {
         return this.activity;
     }
 }

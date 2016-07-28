@@ -18,4 +18,8 @@ public class CarRentalApp extends Application {
     private void setupInjection() {
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
     }
+
+    public AppComponent getComponent() {
+        return appComponent;
+    }
 }
