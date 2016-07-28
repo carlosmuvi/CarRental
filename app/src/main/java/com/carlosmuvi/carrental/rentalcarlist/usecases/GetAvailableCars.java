@@ -21,7 +21,7 @@ public class GetAvailableCars extends UseCase {
         super(threadExecutor, mainThread);
     }
 
-    public void execute(SimpleListener listener) {
+    public void execute(SimpleListener<List<Car>> listener) {
         this.listener = listener;
         threadExecutor.run(this);
     }
