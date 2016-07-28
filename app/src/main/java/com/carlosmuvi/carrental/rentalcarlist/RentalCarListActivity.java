@@ -11,7 +11,7 @@ import com.carlosmuvi.carrental.base.activity.BaseActivity;
  */
 
 public class RentalCarListActivity
-    extends BaseActivity<RentalCarComponent, RentalCarListPresenter, RentalCarListPresenter.View>
+    extends BaseActivity<RentalCarListComponent, RentalCarListPresenter, RentalCarListPresenter.View>
     implements RentalCarListPresenter.View {
 
     @Override protected RentalCarListPresenter getPresenter() {
@@ -23,8 +23,8 @@ public class RentalCarListActivity
         presenter.estimulate();
     }
 
-    @Override protected RentalCarComponent buildComponent() {
-        return DaggerRentalCarComponent.builder()
+    @Override protected RentalCarListComponent buildComponent() {
+        return DaggerRentalCarListComponent.builder()
             .appComponent(getAppComponent())
             .activityModule(new ActivityModule(this))
             .build();

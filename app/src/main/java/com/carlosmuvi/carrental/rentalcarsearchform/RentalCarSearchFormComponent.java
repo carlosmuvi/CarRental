@@ -1,4 +1,4 @@
-package com.carlosmuvi.carrental.rentalcarlist;
+package com.carlosmuvi.carrental.rentalcarsearchform;
 
 import com.carlosmuvi.carrental.base.activity.ActivityComponent;
 import com.carlosmuvi.carrental.base.activity.ActivityModule;
@@ -9,11 +9,10 @@ import dagger.Component;
 /**
  * Created by carlosmuvi on 28/07/16.
  */
-
 @ActivityScope @Component(dependencies = AppComponent.class, modules = {
-    ActivityModule.class, RentalCarListModule.class
-}) public interface RentalCarComponent extends ActivityComponent {
-    void inject(RentalCarListActivity rentalCarListActivity);
+    ActivityModule.class, RentalCarSearchFormModule.class
+}) public interface RentalCarSearchFormComponent extends ActivityComponent {
+    void inject(RentalCarSearchFormActivity rentalCarListActivity);
 
-    RentalCarListPresenter getPresenter();
+    RentalCarSearchFormPresenter getPresenter();
 }
