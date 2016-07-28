@@ -8,7 +8,6 @@ import com.carlosmuvi.carrental.base.BaseView;
  */
 public class RentalCarListPresenter extends BasePresenter {
 
-
     public interface View extends BaseView {
     }
 }
