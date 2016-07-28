@@ -28,7 +28,7 @@ public class GetAvailableCars extends UseCase {
 
     @Override public void run() {
         //TODO run here.
-        Car car = new Car("A", "B", 0.0, "D");
+        Car car = new Car("A", "B", 0.0);
         ArrayList<Car> cars = new ArrayList<>();
         cars.add(car);
         mainThread.post(() -> listener.onSuccess(cars));

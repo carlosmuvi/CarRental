@@ -31,11 +31,18 @@ dependencies {
   //Support
   compile 'com.android.support:appcompat-v7:24.1.0'
 
+  //jodatime
+  compile 'net.danlew:android.joda:2.9.4.1'
+
   //Butterknife
   compile 'com.jakewharton:butterknife:7.0.1'
 
   //java8 streams backport
   compile 'com.annimon:stream:1.1.1'
+
+  //retrofit
+  compile 'com.squareup.retrofit2:retrofit:2.1.0'
+  compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
   //Dagger
   apt 'com.google.dagger:dagger-compiler:2.6'
