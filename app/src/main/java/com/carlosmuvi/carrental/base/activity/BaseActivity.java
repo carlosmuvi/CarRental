@@ -1,10 +1,12 @@
-package com.carlosmuvi.carrental.base;
+package com.carlosmuvi.carrental.base.activity;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
+import com.carlosmuvi.carrental.base.BasePresenter;
+import com.carlosmuvi.carrental.base.BaseView;
 
 /**
  * Created by carlosmuvi on 28/07/16.

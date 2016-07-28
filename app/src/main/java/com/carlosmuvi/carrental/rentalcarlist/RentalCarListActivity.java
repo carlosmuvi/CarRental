@@ -1,7 +1,7 @@
 package com.carlosmuvi.carrental.rentalcarlist;
 
 import com.carlosmuvi.carrental.R;
-import com.carlosmuvi.carrental.base.BaseActivity;
+import com.carlosmuvi.carrental.base.activity.BaseActivity;
 
 /**
  * Created by carlosmuvi on 28/07/16.

@@ -1,4 +1,4 @@
-package com.carlosmuvi.carrental.application;
+package com.carlosmuvi.carrental.base.application;
 
 import android.app.Application;
 
