@@ -6,4 +6,5 @@ package com.carlosmuvi.carrental.base;
 
 public interface BaseView {
     void showMessage(String message);
+
 }

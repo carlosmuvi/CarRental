@@ -2,6 +2,7 @@ package com.carlosmuvi.carrental.base.application;
 
 import android.content.Context;
 import com.carlosmuvi.carrental.base.BaseComponent;
+import com.carlosmuvi.carrental.data.repository.carrental.datasource.CarRentalDatasource;
 import com.carlosmuvi.carrental.domain.threading.Executor;
 import com.carlosmuvi.carrental.domain.threading.MainThread;
 import dagger.Component;
@@ -18,4 +19,5 @@ import javax.inject.Singleton;
     Context context();
     Executor executor();
     MainThread mainThread();
+    CarRentalDatasource carRentalDatasource();
 }

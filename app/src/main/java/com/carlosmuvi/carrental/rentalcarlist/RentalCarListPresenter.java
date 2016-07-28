@@ -7,11 +7,12 @@ import com.carlosmuvi.carrental.domain.model.Car;
 import com.carlosmuvi.carrental.rentalcarlist.usecases.GetAvailableCars;
 import java.util.List;
 import javax.inject.Inject;
+import org.joda.time.DateTime;
 
 /**
  * Created by carlosmuvi on 28/07/16.
  */
-public class RentalCarListPresenter extends BasePresenter {
+public class RentalCarListPresenter extends BasePresenter<RentalCarListPresenter.View> {
 
     GetAvailableCars getAvailableCars;
 
@@ -19,8 +20,8 @@ public class RentalCarListPresenter extends BasePresenter {
         this.getAvailableCars = getAvailableCars;
     }
 
-    public void estimulate(){
-        getAvailableCars.execute(new SimpleListener<List<Car>>() {
+    public void searchForAvailableCars(DateTime pickup, DateTime dropoff, String location) {
+        getAvailableCars.execute(pickup, dropoff, location, new SimpleListener<List<Car>>() {
             @Override public void onSuccess(List<Car> cars) {
                 getView().showMessage(cars.get(0).getModel());
             }

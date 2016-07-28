@@ -16,7 +16,7 @@ import com.carlosmuvi.carrental.base.application.CarRentalApp;
  * Created by carlosmuvi on 28/07/16.
  */
 
-public abstract class BaseActivity<C extends BaseComponent, P extends BasePresenter, V extends BaseView>
+public abstract class BaseActivity<C extends BaseComponent, P extends BasePresenter<V>, V extends BaseView>
     extends AppCompatActivity implements BaseView {
 
     protected P presenter;

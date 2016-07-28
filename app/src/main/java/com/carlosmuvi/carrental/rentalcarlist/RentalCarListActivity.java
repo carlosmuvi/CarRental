@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import com.carlosmuvi.carrental.R;
 import com.carlosmuvi.carrental.base.activity.ActivityModule;
 import com.carlosmuvi.carrental.base.activity.BaseActivity;
+import com.carlosmuvi.carrental.constants.BundleConstants;
+import org.joda.time.DateTime;
 
 /**
  * Created by carlosmuvi on 28/07/16.
@@ -20,7 +22,10 @@ public class RentalCarListActivity
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter.estimulate();
+        DateTime pickup = (DateTime) getIntent().getSerializableExtra(BundleConstants.PICKUP_DATETIME);
+        DateTime dropoff = (DateTime) getIntent().getSerializableExtra(BundleConstants.DROPOFF_DATETIME);
+        String location = getIntent().getStringExtra(BundleConstants.LOCATION);
+        presenter.searchForAvailableCars(pickup, dropoff, location);
     }
 
     @Override protected RentalCarListComponent buildComponent() {
