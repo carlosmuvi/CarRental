@@ -1,4 +1,4 @@
-package com.carlosmuvi.carrental.data.repository.datasource.hotwire;
+package com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;

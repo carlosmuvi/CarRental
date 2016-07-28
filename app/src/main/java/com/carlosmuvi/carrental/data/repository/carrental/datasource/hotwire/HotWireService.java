@@ -1,4 +1,4 @@
-package com.carlosmuvi.carrental.data.repository.datasource.hotwire;
+package com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire;
 
 import java.util.List;
 import retrofit2.Call;
