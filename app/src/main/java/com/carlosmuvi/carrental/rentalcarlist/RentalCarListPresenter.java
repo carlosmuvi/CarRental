@@ -24,6 +24,7 @@ public class RentalCarListPresenter extends BasePresenter<RentalCarListPresenter
         getAvailableCars.execute(pickup, dropoff, location, new SimpleListener<List<Car>>() {
             @Override public void onSuccess(List<Car> cars) {
                 getView().showMessage(cars.get(0).getModel());
+                getView().renderCarList(cars);
             }
 
             @Override public void onError(Exception error) {
@@ -33,5 +34,6 @@ public class RentalCarListPresenter extends BasePresenter<RentalCarListPresenter
     }
 
     public interface View extends BaseView {
+        void renderCarList(List<Car> cars);
     }
 }
