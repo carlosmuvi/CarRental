@@ -23,4 +23,8 @@ public class CarType {
     public String getSize() {
         return size;
     }
+
+    public String getPossibleModels() {
+        return possibleModels;
+    }
 }

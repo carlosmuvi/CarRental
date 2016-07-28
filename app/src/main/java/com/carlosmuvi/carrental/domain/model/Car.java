@@ -16,7 +16,7 @@ public class Car {
     }
 
     public String getModel() {
-        return carType.getCode();
+        return carType.getPossibleModels();
     }
 
     public String getPrice() {

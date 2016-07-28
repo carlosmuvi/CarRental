@@ -171,7 +171,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/dropoff_time_icon"
-        android:text="dropoff time"
+        android:text="Dropoff time"
         android:textColor="@color/black"
         android:textSize="16dp"
         />
@@ -208,13 +208,13 @@
       />
 
   <EditText
-      android:id="@+id/editText2"
+      android:id="@+id/location_edittext"
       android:layout_marginTop="16dp"
       android:layout_marginBottom="16dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:ems="10"
-      android:hint="location"
+      android:hint="Location: LAX, San Francisco..."
       android:inputType="textPersonName"
       />
 

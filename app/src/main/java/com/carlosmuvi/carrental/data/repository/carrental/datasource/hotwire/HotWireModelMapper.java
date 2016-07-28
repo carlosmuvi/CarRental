@@ -27,7 +27,6 @@ public class HotWireModelMapper {
         List<Car> cars = new ArrayList<>();
 
         for (Result result : model) {
-            String carTypeCode = result.carTypeCode;
             Price price = mapPrice(result);
             CarType carType = mapCarType(result, carMetadata);
             String rentalPeriod = mapRentalPeriod(result);

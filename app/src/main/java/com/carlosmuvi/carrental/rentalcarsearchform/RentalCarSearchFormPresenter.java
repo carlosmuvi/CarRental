@@ -23,8 +23,29 @@ public class RentalCarSearchFormPresenter extends BasePresenter<RentalCarSearchF
         this.navigator = navigator;
     }
 
-    public void onSubmitClicked(MutableDateTime pickup, MutableDateTime dropoff, String location) {
-        navigator.navigateToCarRentalList(new DateTime(pickup), new DateTime(dropoff), location);
+    public void onSubmitClicked(boolean dropoffDatePicked, boolean dropoffTimePicked, boolean pickupDatePicked,
+        boolean pickupTimePicked, MutableDateTime pickup, MutableDateTime dropoff, String location) {
+
+        if (validateInput(dropoffDatePicked, dropoffTimePicked, pickupDatePicked, pickupTimePicked, pickup, dropoff,
+            location)) {
+            navigator.navigateToCarRentalList(new DateTime(pickup), new DateTime(dropoff), location);
+        }
+    }
+
+    private boolean validateInput(boolean dropoffDatePicked, boolean dropoffTimePicked, boolean pickupDatePicked,
+        boolean pickupTimePicked, MutableDateTime pickup, MutableDateTime dropoff, String location) {
+        if (!(dropoffDatePicked && dropoffTimePicked && pickupDatePicked && pickupTimePicked)) {
+            getView().showMessage("Select all dates before continue!");
+            return false;
+        } else if (pickup.isAfter(dropoff)) {
+            getView().showMessage("Pickup date should be before dropoff date!");
+            return false;
+        } else if (location.isEmpty()) {
+            getView().showMessage("Select location before continue!");
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void onDropoffDate() {

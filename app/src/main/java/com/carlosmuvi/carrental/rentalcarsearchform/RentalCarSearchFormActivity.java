@@ -1,5 +1,6 @@
 package com.carlosmuvi.carrental.rentalcarsearchform;
 
+import android.widget.EditText;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -20,6 +21,7 @@ public class RentalCarSearchFormActivity
     @Bind(R.id.pickup_date_selection) TextView pickupDateText;
     @Bind(R.id.dropoff_time_selection) TextView dropOffTimeText;
     @Bind(R.id.dropoff_date_selection) TextView dropOffDateText;
+    @Bind(R.id.location_edittext) EditText locationEdittext;
 
     private boolean dropoffDatePicked, dropoffTimePicked, pickupDatePicked, pickupTimePicked;
 
@@ -66,7 +68,8 @@ public class RentalCarSearchFormActivity
     }
 
     @OnClick(R.id.button_submit_form) public void onSubmitClicked() {
-        presenter.onSubmitClicked(selectedPickupDatetime, selectedDropOffDatetime, "LAX");
+        presenter.onSubmitClicked(dropoffDatePicked, dropoffTimePicked, pickupDatePicked, pickupTimePicked,
+            selectedPickupDatetime, selectedDropOffDatetime, locationEdittext.getText().toString());
     }
 
     @Override public void showDatePicker(String key) {
@@ -74,13 +77,13 @@ public class RentalCarSearchFormActivity
         DatePickerDialog dpd = DatePickerDialog.newInstance((view, year, monthOfYear, dayOfMonth) -> {
             if (key.equals(RentalCarSearchFormPresenter.DROPOFF_DATE_KEY)) {
                 selectedDropOffDatetime.setYear(year);
-                selectedDropOffDatetime.setMonthOfYear(monthOfYear+1);
+                selectedDropOffDatetime.setMonthOfYear(monthOfYear + 1);
                 selectedDropOffDatetime.setDayOfMonth(dayOfMonth);
                 dropoffDatePicked = true;
                 presenter.onDropoffDatePicked(selectedDropOffDatetime);
             } else {
                 selectedPickupDatetime.setYear(year);
-                selectedPickupDatetime.setMonthOfYear(monthOfYear+1);
+                selectedPickupDatetime.setMonthOfYear(monthOfYear + 1);
                 selectedPickupDatetime.setDayOfMonth(dayOfMonth);
                 pickupDatePicked = true;
                 presenter.onPickupDatePicked(selectedPickupDatetime);
