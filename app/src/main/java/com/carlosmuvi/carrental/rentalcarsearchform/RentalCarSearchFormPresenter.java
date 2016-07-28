@@ -4,6 +4,8 @@ import com.carlosmuvi.carrental.base.BasePresenter;
 import com.carlosmuvi.carrental.base.BaseView;
 import com.carlosmuvi.carrental.navigator.Navigator;
 import javax.inject.Inject;
+import org.joda.time.DateTime;
+import org.joda.time.MutableDateTime;
 
 /**
  * Created by carlosmuvi on 28/07/16.
@@ -21,26 +23,40 @@ public class RentalCarSearchFormPresenter extends BasePresenter<RentalCarSearchF
         this.navigator = navigator;
     }
 
-    public void onDropoffDateTimeClick() {
-        getView().showTimePicker(DROPOFF_TIME_KEY);
+    public void onSubmitClicked(MutableDateTime pickup, MutableDateTime dropoff, String location) {
+        navigator.navigateToCarRentalList(new DateTime(pickup), new DateTime(dropoff), location);
+    }
+
+    public void onDropoffDate() {
         getView().showDatePicker(DROPOFF_DATE_KEY);
     }
 
-    public void onPickupDateTimeClick() {
-        getView().showTimePicker(PICKUP_TIME_KEY);
+    public void onDropoffTime() {
+        getView().showTimePicker(DROPOFF_TIME_KEY);
+    }
+
+    public void onPickupDate() {
         getView().showDatePicker(PICKUP_DATE_KEY);
     }
 
-    public void onDropOffDateTimePicked(DateTimeWrapper datetime) {
-        getView().showDropoffDateTimeText(datetime.getDateTime().toString());
+    public void onPickupTime() {
+        getView().showTimePicker(PICKUP_TIME_KEY);
     }
 
-    public void onPickupDateTimePicked(DateTimeWrapper datetime) {
-        getView().showPickupDateTimeText(datetime.getDateTime().toString());
+    public void onDropoffTimePicked(MutableDateTime datetime) {
+        getView().showDropoffTimeText(datetime.toString("HH:mm"));
     }
 
-    public void onSubmitClicked(DateTimeWrapper pickup, DateTimeWrapper dropoff, String location) {
-        navigator.navigateToCarRentalList(pickup.getDateTime(), dropoff.getDateTime(), location);
+    public void onPickupTimePicked(MutableDateTime datetime) {
+        getView().showPickupTimeText(datetime.toString("HH:mm"));
+    }
+
+    public void onPickupDatePicked(MutableDateTime datetime) {
+        getView().showPickupDateText(datetime.toString("MM/dd/yyyy"));
+    }
+
+    public void onDropoffDatePicked(MutableDateTime datetime) {
+        getView().showDropoffDateText(datetime.toString("MM/dd/yyyy"));
     }
 
     public interface View extends BaseView {
@@ -48,8 +64,12 @@ public class RentalCarSearchFormPresenter extends BasePresenter<RentalCarSearchF
 
         void showTimePicker(String key);
 
-        void showDropoffDateTimeText(String dateTimeText);
+        void showDropoffDateText(String dateTimeText);
 
-        void showPickupDateTimeText(String dateTimeText);
+        void showPickupTimeText(String dateTimeText);
+
+        void showDropoffTimeText(String dateTimeText);
+
+        void showPickupDateText(String dateTimeText);
     }
 }

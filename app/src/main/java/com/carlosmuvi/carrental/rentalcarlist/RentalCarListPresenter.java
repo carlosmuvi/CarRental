@@ -23,12 +23,17 @@ public class RentalCarListPresenter extends BasePresenter<RentalCarListPresenter
     public void searchForAvailableCars(DateTime pickup, DateTime dropoff, String location) {
         getAvailableCars.execute(pickup, dropoff, location, new SimpleListener<List<Car>>() {
             @Override public void onSuccess(List<Car> cars) {
-                getView().showMessage(cars.get(0).getModel());
-                getView().renderCarList(cars);
+
+                if (cars.isEmpty()) {
+                    getView().showMessage("No available cars found!");
+                } else {
+                    getView().showMessage(cars.get(0).getModel());
+                    getView().renderCarList(cars);
+                }
             }
 
             @Override public void onError(Exception error) {
-
+                getView().showMessage(error.getMessage());
             }
         });
     }

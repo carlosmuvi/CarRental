@@ -1,9 +1,8 @@
 package com.carlosmuvi.carrental.data.repository.carrental.specification;
 
 import com.carlosmuvi.carrental.data.repository.base.Specification;
-import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.HotWireApiCarModel;
 import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.HotWireService;
-import java.util.List;
+import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.model.HotwireResponse;
 import retrofit2.Call;
 
 /**
@@ -11,6 +10,6 @@ import retrofit2.Call;
  */
 public interface CarRentalSpecification extends Specification {
 
-    Call<List<HotWireApiCarModel>> toRetrofitQuery(HotWireService hotWireService);
+    Call<HotwireResponse> toRetrofitQuery(HotWireService hotWireService);
     //TODO toCacheQuery, for example.
 }

@@ -1,8 +1,15 @@
 package com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire;
 
+import android.support.annotation.NonNull;
+import com.annimon.stream.Optional;
 import com.annimon.stream.Stream;
+import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.model.MetaData;
+import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.model.Result;
+import com.carlosmuvi.carrental.data.repository.carrental.datasource.hotwire.model.Type;
 import com.carlosmuvi.carrental.domain.model.Car;
-import java.util.Arrays;
+import com.carlosmuvi.carrental.domain.model.CarType;
+import com.carlosmuvi.carrental.domain.model.Price;
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -15,13 +22,35 @@ public class HotWireModelMapper {
     @Inject public HotWireModelMapper() {
     }
 
-    List<Car> map(HotWireApiCarModel.Result model) {
-        Car[] array = (Car[]) Stream.of(model).map(result -> {
-            String carTypeCode = result.carTypeCode;
-            double price = Double.parseDouble(result.totalPrice);
-            return new Car(carTypeCode, carTypeCode, price);
-        }).toArray();
+    List<Car> map(List<Result> model, MetaData carMetadata) {
 
-        return Arrays.asList(array);
+        List<Car> cars = new ArrayList<>();
+
+        for (Result result : model) {
+            String carTypeCode = result.carTypeCode;
+            Price price = mapPrice(result);
+            CarType carType = mapCarType(result, carMetadata);
+
+            cars.add(new Car(price, carType));
+        }
+
+        return cars;
+    }
+
+    private CarType mapCarType(Result result, MetaData carMetadata) {
+        Optional<Type> currentCarType = Stream.of(carMetadata.carMetaData.carTypes)
+            .filter(value -> value.carTypeCode.equalsIgnoreCase(result.carTypeCode))
+            .findFirst();
+
+        if (currentCarType.isPresent()) {
+            Type type = currentCarType.get();
+            return new CarType(type.carTypeCode, type.typicalSeating, type.possibleFeatures, type.possibleModels);
+        } else {
+            return new CarType("Unknown", "Unknown", "Unknown", "Unknown");
+        }
+    }
+
+    @NonNull private Price mapPrice(Result result) {
+        return new Price(Double.parseDouble(result.totalPrice), result.currencyCode);
     }
 }

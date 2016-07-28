@@ -5,17 +5,15 @@ package com.carlosmuvi.carrental.domain.model;
  */
 
 public class Car {
-    private String model;
-    private String brand;
-    private double price;
+    private Price price;
+    private CarType carType;
 
-    public Car(String model, String brand, double price) {
-        this.model = model;
-        this.brand = brand;
+    public Car(Price price, CarType carType) {
         this.price = price;
+        this.carType = carType;
     }
 
     public String getModel() {
-        return model;
+        return carType.getCode();
     }
 }

@@ -12,37 +12,135 @@
     >
 
   <RelativeLayout
-      android:id="@+id/pickup_datetime_container"
+      android:id="@+id/pickup_date_container"
       android:layout_width="match_parent"
       android:layout_height="65dp"
       >
 
     <TextView
-        android:id="@+id/pickup_datetime_title"
+        android:id="@+id/pickup_date_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
-        android:layout_toRightOf="@+id/pickup_datetime_icon"
+        android:layout_toRightOf="@+id/pickup_date_icon"
         android:text="Pickup date"
         android:textColor="@color/black"
         android:textSize="16dp"
         />
 
     <TextView
-        android:id="@+id/pickup_datetime_selection"
+        android:id="@+id/pickup_date_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="12dp"
         android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@+id/pickup_datetime_icon"
-        android:text="Pickup date"
+        android:layout_toRightOf="@+id/pickup_date_icon"
+        android:text="click to pick"
         android:textColor="@color/light_grey"
         android:textSize="12dp"
         />
     <ImageView
-        android:id="@+id/pickup_datetime_icon"
+        android:id="@+id/pickup_date_icon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="18dp"
+        android:src="@drawable/ic_assignment_black_24dp"
+        />
+
+  </RelativeLayout>
+
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/light_grey"
+      />
+
+  <RelativeLayout
+      android:id="@+id/dropoff_date_container"
+      android:layout_width="match_parent"
+      android:layout_height="65dp"
+      >
+
+    <TextView
+        android:id="@+id/dropoff_date_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/dropoff_date_icon"
+        android:text="Dropoff date"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/dropoff_date_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/dropoff_date_icon"
+        android:text="click to pick"
+        android:textColor="@color/light_grey"
+        android:textSize="12dp"
+        />
+    <ImageView
+        android:id="@+id/dropoff_date_icon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="18dp"
+        android:src="@drawable/ic_assignment_black_24dp"
+        />
+
+  </RelativeLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/light_grey"
+      />
+  <RelativeLayout
+      android:id="@+id/pickup_time_container"
+      android:layout_width="match_parent"
+      android:layout_height="65dp"
+      >
+
+    <TextView
+        android:id="@+id/pickup_time_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/pickup_time_icon"
+        android:text="Pickup time"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/pickup_time_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/pickup_time_icon"
+        android:text="click to pick"
+        android:textColor="@color/light_grey"
+        android:textSize="12dp"
+        />
+    <ImageView
+        android:id="@+id/pickup_time_icon"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_alignParentLeft="true"
@@ -61,37 +159,37 @@
       />
 
   <RelativeLayout
-      android:id="@+id/dropoff_datetime_container"
+      android:id="@+id/dropoff_time_container"
       android:layout_width="match_parent"
       android:layout_height="65dp"
       >
 
     <TextView
-        android:id="@+id/dropoff_datetime_title"
+        android:id="@+id/dropoff_time_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
-        android:layout_toRightOf="@+id/dropoff_datetime_icon"
-        android:text="dropoff date"
+        android:layout_toRightOf="@+id/dropoff_time_icon"
+        android:text="dropoff time"
         android:textColor="@color/black"
         android:textSize="16dp"
         />
 
     <TextView
-        android:id="@+id/dropoff_datetime_selection"
+        android:id="@+id/dropoff_time_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="12dp"
         android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@+id/dropoff_datetime_icon"
-        android:text="dropoff date"
+        android:layout_toRightOf="@+id/dropoff_time_icon"
+        android:text="click to pick"
         android:textColor="@color/light_grey"
         android:textSize="12dp"
         />
     <ImageView
-        android:id="@+id/dropoff_datetime_icon"
+        android:id="@+id/dropoff_time_icon"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_alignParentLeft="true"
@@ -111,6 +209,8 @@
 
   <EditText
       android:id="@+id/editText2"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="16dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:ems="10"
@@ -121,8 +221,8 @@
   <Button
       android:id="@+id/button_submit_form"
       android:layout_width="match_parent"
-      android:text="Search"
       android:layout_height="wrap_content"
+      android:text="Search"
       />
 
 </LinearLayout>

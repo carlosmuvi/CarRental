@@ -15,4 +15,6 @@ public abstract class BasePresenter<V extends BaseView> {
     public void setView(V view) {
         this.view = view;
     }
+
+
 }
